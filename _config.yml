@@ -2,6 +2,7 @@ name: VADR
 favicon: null
 layout_spectrum: 0.75848
 typography_spectrum: 0.4317157007753849
+title: "Een blog door papa's voor iedereen die het lezen wil"
 cta:
   domain: null
   bucket: null
