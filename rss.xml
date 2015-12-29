@@ -2,14 +2,21 @@
     <channel>
         <title><![CDATA[VADR]]></title>
         <description><![CDATA[VADR]]></description>
-        <link>http://github.com/dylang/node-rss</link>
+        <link>https://thegrid.ai/vadr/</link>
         <generator>The Grid</generator>
-        <lastBuildDate>Tue, 29 Dec 2015 17:40:21 GMT</lastBuildDate>
-        <atom:link href="undefinedrss.xml" rel="self" type="application/rss+xml"/>
+        <lastBuildDate>Tue, 29 Dec 2015 21:51:01 GMT</lastBuildDate>
+        <atom:link href="https://thegrid.ai/vadr/rss.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Eten is delen…en ook een beetje feest.]]></title>
+            <description><![CDATA[<article><h1>Eten is delen…en ook een beetje feest.</h1><p>Ik eet graag, kook veel en blijkbaar valt de appel niet ver van de spreekwoordelijke boom. “Die van ons” kan eten, veel eten, goed eten, smakelijk. Als de oogjes iets meer open gaan, het mondje lichte smakgeluidjes maakt en ze naar voor begint te leunen, dan weet ik: tijd om te delen.</p><img src="https://s3-us-west-2.amazonaws.com/the-grid-img/p/b212a8c5d6182452993f0ba15fca88252b2fbcde.jpg"></article>]]></description>
+            <link>https://thegrid.ai/vadr/eten-is-delenen-ook-een-beetje-feest/index.html</link>
+            <guid isPermaLink="false">8d12e1d6-cff8-48d4-a609-890a8722996a</guid>
+            <pubDate>Tue, 29 Dec 2015 21:50:46 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Vadr zijn]]></title>
             <description><![CDATA[<article><h1>Vadr zijn</h1><p>Hoe het gaat bij twee vaders of bij twee moeders, dat weet ik niet. Een vader, dat word je. Bij de meeste vrouwen is er ergens een alarm geïnstalleerd. Geen idee, waar, maar dat alarm is er. En vanaf het moment dat de beste vrienden zwanger worden, of nog maar over kinderen beginnen na te denken, treed het alarm langzaam in werking. </p><img src="https://s3-us-west-2.amazonaws.com/the-grid-img/p/32951bffd86e65b1802d76b8234c61da8bf193c3.jpg"></article>]]></description>
-            <link>undefinedvadr-zijn/index.html</link>
+            <link>https://thegrid.ai/vadr/vadr-zijn/index.html</link>
             <guid isPermaLink="false">cee10e30-52fd-4bed-b8c1-68fc74fa819c</guid>
             <pubDate>Tue, 29 Dec 2015 17:40:10 GMT</pubDate>
         </item>
