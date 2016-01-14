@@ -1,4 +1,4 @@
-<!DOCTYPE HTML><html class="exporting wf-loading"><head><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/><title>Eten is delen…en ook een beetje feest. - VADR</title><link href="../rss.xml" title="Een blog door papa's voor iedereen die het lezen wil feed" rel="alternate" type="application/rss+xml"/><meta name="generator" content="The Grid taylor/0.16.25"><meta name="the-grid-solution" content="720f4609-4a14-477e-a4d4-b46f8f8926f5"><style href="./css/scale/mini.css" media="(max-width: 19.9376em)" rel="stylesheet">@media (max-width: 15.625em){html{font-size:3.09375em !important}}
+<!DOCTYPE HTML><html class="exporting wf-loading"><head><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/><title>Eten is delen…en ook een beetje feest. - VADR</title><link href="../rss.xml" title="Een blog door papa's voor iedereen die het lezen wil feed" rel="alternate" type="application/rss+xml"/><meta name="generator" content="The Grid taylor/0.17.3"><meta name="the-grid-solution" content="94e404c3-31ad-4eff-9f9f-32dbb95bb080"><style href="./css/scale/mini.css" media="(max-width: 19.9376em)" rel="stylesheet">@media (max-width: 15.625em){html{font-size:3.09375em !important}}
 @media (min-width: 15.6875em)and (max-width: 15.75em){	html{font-size:3.28125em !important}}
 @media (min-width: 15.8125em)and (max-width: 16.25em){	html{font-size:3.375em !important}}
 @media (min-width: 16.3125em)and (max-width: 16.6875em){html{font-size:3.46875em !important}}
@@ -202,6 +202,14 @@ body {
 }
 .stack {
   z-index: 1;
+  transition: transform 0.3s ease-out;
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+}
+.group,
+.aside,
+.decoration {
+  transition: transform 0.3s ease-out;
+  -webkit-transition: -webkit-transform 0.3s ease-out;
 }
 picture {
   display: inline-block;
@@ -250,6 +258,9 @@ a:active {
   transition: color 0.1s ease-in, background-color 0.1s ease-out;
   -webkit-transition: color 0.1s ease-in, background-color 0.1s ease-out;
 }
+a.aside {
+  display: inline-block;
+}
 html.exporting a {
   transition: none;
 }
@@ -259,11 +270,21 @@ html.exporting a {
 .media > a {
   display: inline-block;
 }
+.media iframe {
+  transition: 0.3s opacity ease-in;
+  -webkit-transition: 0.3s opacity ease-in;
+}
 h1 a,
 h2 a,
 h3 a {
   font-weight: inherit;
   letter-spacing: inherit;
+}
+a {
+  -webkit-box-decoration-break: clone;
+  -ms-box-decoration-break: clone;
+  -moz-box-decoration-break: clone;
+  box-decoration-break: clone;
 }
 .text-decoration {
   -webkit-box-decoration-break: clone;
@@ -277,36 +298,50 @@ h3 a {
   margin-left: 1.5em;
 }
 .decoration {
-  position: relative;
   pointer-events: none;
+}
+.svg {
+  position: relative;
   background-color: currentColor;
 }
-.decoration > svg {
+.svg > svg {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
 }
-.decoration.connector > svg {
+.svg.connector > svg {
   width: 109%;
   height: 109%;
   margin-left: -2%;
 }
-.decoration path,
-.decoration ellipse,
-.decoration rect,
-.decoration polygon,
-.decoration circle {
+.svg path,
+.svg ellipse,
+.svg rect,
+.svg polygon,
+.svg circle {
   fill: currentColor;
 }
-.decoration mpath,
-.decoration line,
-.decoration polyline {
+.svg mpath,
+.svg line,
+.svg polyline {
   stroke: currentColor;
 }
-.svg.decoration {
+.svg {
   background-color: transparent;
+}
+.revealed .play.svg:after {
+  display: block;
+  width: 40px;
+  height: 40px;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  margin-top: -20px;
+  margin-left: -20px;
+  background-color: currentColor;
+  content: "";
 }
 .colors-style-aside-border .publisher,
 .colors-style-aside-border .author {
@@ -442,7 +477,7 @@ ul {
 #u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4-g-textual-t-paragraph>p:nth-of-type(2){margin-top: 0.244rem;}
 #u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4-g-textual-t-paragraph>p:nth-of-type(3){margin-top: 0.244rem;}
 #u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4-g-textual-t-paragraph>p:nth-of-type(4){margin-top: 0.244rem;}
-#u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4-g-textual-d-separator#u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4-g-textual-d-separator{height: 0.164rem; width: 0.164rem; position: absolute; top: 2.094rem; left: 0.124rem;}
+#u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4-g-textual-d-separator#u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4-g-textual-d-separator{height: 0.164rem; width: 0.164rem; position: absolute; left: 0.124rem; top: 2.094rem;}
 #u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4#u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4 .group.textual > .title.headline { color: rgb(224, 228, 235); }
 #u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4#u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4 .group.textual > .title.headline a:hover { color: rgb(185, 202, 211); }
 #u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4#u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4 .group.textual > .text.paragraph { color: rgb(237, 247, 244); }
@@ -463,7 +498,8 @@ ul {
 #u-9b1bf810-1e20-4084-9a6f-cef59461afda-g-mixed-t-paragraph>p:nth-of-type(2){margin-top: 0.244rem;}
 #u-9b1bf810-1e20-4084-9a6f-cef59461afda-g-mixed-t-paragraph>p:nth-of-type(3){margin-top: 0.244rem;}
 #u-9b1bf810-1e20-4084-9a6f-cef59461afda-g-mixed-t-paragraph>p:nth-of-type(4){margin-top: 0.244rem;}
-#u-9b1bf810-1e20-4084-9a6f-cef59461afda#u-9b1bf810-1e20-4084-9a6f-cef59461afda .group.mixed > .media.cover { background-image: linear-gradient(rgb(33, 38, 40), rgb(237, 247, 244)); }
+#u-9b1bf810-1e20-4084-9a6f-cef59461afda#u-9b1bf810-1e20-4084-9a6f-cef59461afda .group.mixed > .media.cover { background-image: linear-gradient(rgb(33, 38, 40), rgb(237, 247, 244)); color: rgb(93, 127, 152); }
+#u-9b1bf810-1e20-4084-9a6f-cef59461afda#u-9b1bf810-1e20-4084-9a6f-cef59461afda .group.mixed :hover.media.cover { color: rgb(28, 32, 34); }
 #u-9b1bf810-1e20-4084-9a6f-cef59461afda#u-9b1bf810-1e20-4084-9a6f-cef59461afda .group.mixed > .text.paragraph { color: rgb(237, 247, 244); }
 #u-9b1bf810-1e20-4084-9a6f-cef59461afda#u-9b1bf810-1e20-4084-9a6f-cef59461afda .group.mixed > .text.paragraph a { color: rgb(92, 112, 125); }
 #u-9b1bf810-1e20-4084-9a6f-cef59461afda#u-9b1bf810-1e20-4084-9a6f-cef59461afda .group.mixed > .text.paragraph a:hover { color: rgb(106, 113, 113); }
@@ -529,7 +565,7 @@ display: none;
 #u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4-g-textual-t-paragraph>p:nth-of-type(2){margin-top: 0.244rem;}
 #u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4-g-textual-t-paragraph>p:nth-of-type(3){margin-top: 0.244rem;}
 #u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4-g-textual-t-paragraph>p:nth-of-type(4){margin-top: 0.244rem;}
-#u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4-g-textual-d-separator#u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4-g-textual-d-separator{height: 0.164rem; width: 0.164rem; position: absolute; top: 1.444rem; left: 0.184rem;}
+#u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4-g-textual-d-separator#u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4-g-textual-d-separator{height: 0.164rem; width: 0.164rem; position: absolute; left: 0.184rem; top: 1.444rem;}
 #u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4#u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4 .group.textual > .title.headline { color: rgb(224, 228, 235); }
 #u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4#u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4 .group.textual > .title.headline a:hover { color: rgb(185, 202, 211); }
 #u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4#u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4 .group.textual > .text.paragraph { color: rgb(237, 247, 244); }
@@ -550,7 +586,8 @@ display: none;
 #u-9b1bf810-1e20-4084-9a6f-cef59461afda-g-mixed-t-paragraph>p:nth-of-type(2){margin-top: 0.244rem;}
 #u-9b1bf810-1e20-4084-9a6f-cef59461afda-g-mixed-t-paragraph>p:nth-of-type(3){margin-top: 0.244rem;}
 #u-9b1bf810-1e20-4084-9a6f-cef59461afda-g-mixed-t-paragraph>p:nth-of-type(4){margin-top: 0.244rem;}
-#u-9b1bf810-1e20-4084-9a6f-cef59461afda#u-9b1bf810-1e20-4084-9a6f-cef59461afda .group.mixed > .media.cover { background-image: linear-gradient(rgb(33, 38, 40), rgb(237, 247, 244)); }
+#u-9b1bf810-1e20-4084-9a6f-cef59461afda#u-9b1bf810-1e20-4084-9a6f-cef59461afda .group.mixed > .media.cover { background-image: linear-gradient(rgb(33, 38, 40), rgb(237, 247, 244)); color: rgb(93, 127, 152); }
+#u-9b1bf810-1e20-4084-9a6f-cef59461afda#u-9b1bf810-1e20-4084-9a6f-cef59461afda .group.mixed :hover.media.cover { color: rgb(28, 32, 34); }
 #u-9b1bf810-1e20-4084-9a6f-cef59461afda#u-9b1bf810-1e20-4084-9a6f-cef59461afda .group.mixed > .text.paragraph { color: rgb(237, 247, 244); }
 #u-9b1bf810-1e20-4084-9a6f-cef59461afda#u-9b1bf810-1e20-4084-9a6f-cef59461afda .group.mixed > .text.paragraph a { color: rgb(92, 112, 125); }
 #u-9b1bf810-1e20-4084-9a6f-cef59461afda#u-9b1bf810-1e20-4084-9a6f-cef59461afda .group.mixed > .text.paragraph a:hover { color: rgb(106, 113, 113); }
@@ -616,7 +653,7 @@ display: none;
 #u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4-g-textual-t-paragraph>p:nth-of-type(2){margin-top: 0.244rem;}
 #u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4-g-textual-t-paragraph>p:nth-of-type(3){margin-top: 0.244rem;}
 #u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4-g-textual-t-paragraph>p:nth-of-type(4){margin-top: 0.244rem;}
-#u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4-g-textual-d-separator#u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4-g-textual-d-separator{height: 0.164rem; width: 0.164rem; position: absolute; top: 2.204rem; left: 1.444rem;}
+#u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4-g-textual-d-separator#u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4-g-textual-d-separator{height: 0.164rem; width: 0.164rem; position: absolute; left: 1.444rem; top: 2.204rem;}
 #u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4#u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4 .group.textual > .title.headline { color: rgb(224, 228, 235); }
 #u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4#u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4 .group.textual > .title.headline a:hover { color: rgb(185, 202, 211); }
 #u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4#u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4 .group.textual > .text.paragraph { color: rgb(237, 247, 244); }
@@ -637,7 +674,8 @@ display: none;
 #u-9b1bf810-1e20-4084-9a6f-cef59461afda-g-mixed-t-paragraph>p:nth-of-type(2){margin-top: 0.244rem;}
 #u-9b1bf810-1e20-4084-9a6f-cef59461afda-g-mixed-t-paragraph>p:nth-of-type(3){margin-top: 0.244rem;}
 #u-9b1bf810-1e20-4084-9a6f-cef59461afda-g-mixed-t-paragraph>p:nth-of-type(4){margin-top: 0.244rem;}
-#u-9b1bf810-1e20-4084-9a6f-cef59461afda#u-9b1bf810-1e20-4084-9a6f-cef59461afda .group.mixed > .media.cover { background-image: linear-gradient(rgb(33, 38, 40), rgb(237, 247, 244)); }
+#u-9b1bf810-1e20-4084-9a6f-cef59461afda#u-9b1bf810-1e20-4084-9a6f-cef59461afda .group.mixed > .media.cover { background-image: linear-gradient(rgb(33, 38, 40), rgb(237, 247, 244)); color: rgb(93, 127, 152); }
+#u-9b1bf810-1e20-4084-9a6f-cef59461afda#u-9b1bf810-1e20-4084-9a6f-cef59461afda .group.mixed :hover.media.cover { color: rgb(28, 32, 34); }
 #u-9b1bf810-1e20-4084-9a6f-cef59461afda#u-9b1bf810-1e20-4084-9a6f-cef59461afda .group.mixed > .text.paragraph { color: rgb(237, 247, 244); }
 #u-9b1bf810-1e20-4084-9a6f-cef59461afda#u-9b1bf810-1e20-4084-9a6f-cef59461afda .group.mixed > .text.paragraph a { color: rgb(92, 112, 125); }
 #u-9b1bf810-1e20-4084-9a6f-cef59461afda#u-9b1bf810-1e20-4084-9a6f-cef59461afda .group.mixed > .text.paragraph a:hover { color: rgb(106, 113, 113); }
@@ -703,7 +741,7 @@ display: none;
 #u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4-g-textual-t-paragraph>p:nth-of-type(2){margin-top: 0.244rem;}
 #u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4-g-textual-t-paragraph>p:nth-of-type(3){margin-top: 0.244rem;}
 #u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4-g-textual-t-paragraph>p:nth-of-type(4){margin-top: 0.244rem;}
-#u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4-g-textual-d-separator#u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4-g-textual-d-separator{height: 0.164rem; width: 0.164rem; position: absolute; top: 1.604rem; left: 2.164rem;}
+#u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4-g-textual-d-separator#u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4-g-textual-d-separator{height: 0.164rem; width: 0.164rem; position: absolute; left: 2.164rem; top: 1.604rem;}
 #u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4#u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4 .group.textual > .title.headline { color: rgb(224, 228, 235); }
 #u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4#u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4 .group.textual > .title.headline a:hover { color: rgb(185, 202, 211); }
 #u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4#u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4 .group.textual > .text.paragraph { color: rgb(237, 247, 244); }
@@ -724,7 +762,8 @@ display: none;
 #u-9b1bf810-1e20-4084-9a6f-cef59461afda-g-mixed-t-paragraph>p:nth-of-type(2){margin-top: 0.244rem;}
 #u-9b1bf810-1e20-4084-9a6f-cef59461afda-g-mixed-t-paragraph>p:nth-of-type(3){margin-top: 0.244rem;}
 #u-9b1bf810-1e20-4084-9a6f-cef59461afda-g-mixed-t-paragraph>p:nth-of-type(4){margin-top: 0.244rem;}
-#u-9b1bf810-1e20-4084-9a6f-cef59461afda#u-9b1bf810-1e20-4084-9a6f-cef59461afda .group.mixed > .media.cover { background-image: linear-gradient(rgb(33, 38, 40), rgb(237, 247, 244)); }
+#u-9b1bf810-1e20-4084-9a6f-cef59461afda#u-9b1bf810-1e20-4084-9a6f-cef59461afda .group.mixed > .media.cover { background-image: linear-gradient(rgb(33, 38, 40), rgb(237, 247, 244)); color: rgb(93, 127, 152); }
+#u-9b1bf810-1e20-4084-9a6f-cef59461afda#u-9b1bf810-1e20-4084-9a6f-cef59461afda .group.mixed :hover.media.cover { color: rgb(28, 32, 34); }
 #u-9b1bf810-1e20-4084-9a6f-cef59461afda#u-9b1bf810-1e20-4084-9a6f-cef59461afda .group.mixed > .text.paragraph { color: rgb(237, 247, 244); }
 #u-9b1bf810-1e20-4084-9a6f-cef59461afda#u-9b1bf810-1e20-4084-9a6f-cef59461afda .group.mixed > .text.paragraph a { color: rgb(92, 112, 125); }
 #u-9b1bf810-1e20-4084-9a6f-cef59461afda#u-9b1bf810-1e20-4084-9a6f-cef59461afda .group.mixed > .text.paragraph a:hover { color: rgb(106, 113, 113); }
@@ -790,7 +829,7 @@ display: none;
 #u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4-g-textual-t-paragraph>p:nth-of-type(2){margin-top: 0.304rem;}
 #u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4-g-textual-t-paragraph>p:nth-of-type(3){margin-top: 0.304rem;}
 #u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4-g-textual-t-paragraph>p:nth-of-type(4){margin-top: 0.304rem;}
-#u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4-g-textual-d-separator#u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4-g-textual-d-separator{height: 0.204rem; width: 0.204rem; position: absolute; top: 2rem; left: 2.704rem;}
+#u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4-g-textual-d-separator#u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4-g-textual-d-separator{height: 0.204rem; width: 0.204rem; position: absolute; left: 2.704rem; top: 2rem;}
 #u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4#u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4 .group.textual > .title.headline { color: rgb(224, 228, 235); }
 #u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4#u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4 .group.textual > .title.headline a:hover { color: rgb(185, 202, 211); }
 #u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4#u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4 .group.textual > .text.paragraph { color: rgb(237, 247, 244); }
@@ -811,7 +850,8 @@ display: none;
 #u-9b1bf810-1e20-4084-9a6f-cef59461afda-g-mixed-t-paragraph>p:nth-of-type(2){margin-top: 0.304rem;}
 #u-9b1bf810-1e20-4084-9a6f-cef59461afda-g-mixed-t-paragraph>p:nth-of-type(3){margin-top: 0.304rem;}
 #u-9b1bf810-1e20-4084-9a6f-cef59461afda-g-mixed-t-paragraph>p:nth-of-type(4){margin-top: 0.304rem;}
-#u-9b1bf810-1e20-4084-9a6f-cef59461afda#u-9b1bf810-1e20-4084-9a6f-cef59461afda .group.mixed > .media.cover { background-image: linear-gradient(rgb(33, 38, 40), rgb(237, 247, 244)); }
+#u-9b1bf810-1e20-4084-9a6f-cef59461afda#u-9b1bf810-1e20-4084-9a6f-cef59461afda .group.mixed > .media.cover { background-image: linear-gradient(rgb(33, 38, 40), rgb(237, 247, 244)); color: rgb(93, 127, 152); }
+#u-9b1bf810-1e20-4084-9a6f-cef59461afda#u-9b1bf810-1e20-4084-9a6f-cef59461afda .group.mixed :hover.media.cover { color: rgb(28, 32, 34); }
 #u-9b1bf810-1e20-4084-9a6f-cef59461afda#u-9b1bf810-1e20-4084-9a6f-cef59461afda .group.mixed > .text.paragraph { color: rgb(237, 247, 244); }
 #u-9b1bf810-1e20-4084-9a6f-cef59461afda#u-9b1bf810-1e20-4084-9a6f-cef59461afda .group.mixed > .text.paragraph a { color: rgb(92, 112, 125); }
 #u-9b1bf810-1e20-4084-9a6f-cef59461afda#u-9b1bf810-1e20-4084-9a6f-cef59461afda .group.mixed > .text.paragraph a:hover { color: rgb(106, 113, 113); }
@@ -877,7 +917,7 @@ display: none;
 #u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4-g-textual-t-paragraph>p:nth-of-type(2){margin-top: 0.234rem;}
 #u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4-g-textual-t-paragraph>p:nth-of-type(3){margin-top: 0.234rem;}
 #u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4-g-textual-t-paragraph>p:nth-of-type(4){margin-top: 0.234rem;}
-#u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4-g-textual-d-separator#u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4-g-textual-d-separator{height: 0.154rem; width: 0.154rem; position: absolute; top: 1.584rem; left: 2.704rem;}
+#u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4-g-textual-d-separator#u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4-g-textual-d-separator{height: 0.154rem; width: 0.154rem; position: absolute; left: 2.704rem; top: 1.584rem;}
 #u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4#u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4 .group.textual > .title.headline { color: rgb(224, 228, 235); }
 #u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4#u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4 .group.textual > .title.headline a:hover { color: rgb(185, 202, 211); }
 #u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4#u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4 .group.textual > .text.paragraph { color: rgb(237, 247, 244); }
@@ -892,13 +932,14 @@ display: none;
 #u-9b1bf810-1e20-4084-9a6f-cef59461afda#u-9b1bf810-1e20-4084-9a6f-cef59461afda:before{}
 #u-9b1bf810-1e20-4084-9a6f-cef59461afda >.group.mixed { text-align: left; }
 #u-9b1bf810-1e20-4084-9a6f-cef59461afda-g-mixed#u-9b1bf810-1e20-4084-9a6f-cef59461afda-g-mixed{font-size: 0.154rem; line-height: 0.234rem; height: 7.154rem; width: 13.504rem; position: absolute; top: 0rem; left: 1.804rem;}
-#u-9b1bf810-1e20-4084-9a6f-cef59461afda-g-mixed-m-cover#u-9b1bf810-1e20-4084-9a6f-cef59461afda-g-mixed-m-cover{overflow: hidden; width: 8.104rem; height: 4.434rem; position: absolute; top: 2.624rem; left: 2.704rem;}
+#u-9b1bf810-1e20-4084-9a6f-cef59461afda-g-mixed-m-cover#u-9b1bf810-1e20-4084-9a6f-cef59461afda-g-mixed-m-cover{overflow: hidden; width: 8.104rem; height: 4.434rem; position: absolute; top: 2.624rem; left: 2.714rem;}
 #u-9b1bf810-1e20-4084-9a6f-cef59461afda-g-mixed-m-cover-img#u-9b1bf810-1e20-4084-9a6f-cef59461afda-g-mixed-m-cover-img{height: 4.434rem; width: 8.114rem; position: absolute; top: 0rem; left: 0rem;}
 #u-9b1bf810-1e20-4084-9a6f-cef59461afda-g-mixed-t-paragraph#u-9b1bf810-1e20-4084-9a6f-cef59461afda-g-mixed-t-paragraph{font-size: 0.154rem; line-height: 0.234rem; width: 8.104rem; position: absolute; top: 0.124rem; left: 2.704rem;}
 #u-9b1bf810-1e20-4084-9a6f-cef59461afda-g-mixed-t-paragraph>p:nth-of-type(2){margin-top: 0.234rem;}
 #u-9b1bf810-1e20-4084-9a6f-cef59461afda-g-mixed-t-paragraph>p:nth-of-type(3){margin-top: 0.234rem;}
 #u-9b1bf810-1e20-4084-9a6f-cef59461afda-g-mixed-t-paragraph>p:nth-of-type(4){margin-top: 0.234rem;}
-#u-9b1bf810-1e20-4084-9a6f-cef59461afda#u-9b1bf810-1e20-4084-9a6f-cef59461afda .group.mixed > .media.cover { background-image: linear-gradient(rgb(33, 38, 40), rgb(237, 247, 244)); }
+#u-9b1bf810-1e20-4084-9a6f-cef59461afda#u-9b1bf810-1e20-4084-9a6f-cef59461afda .group.mixed > .media.cover { background-image: linear-gradient(rgb(33, 38, 40), rgb(237, 247, 244)); color: rgb(93, 127, 152); }
+#u-9b1bf810-1e20-4084-9a6f-cef59461afda#u-9b1bf810-1e20-4084-9a6f-cef59461afda .group.mixed :hover.media.cover { color: rgb(28, 32, 34); }
 #u-9b1bf810-1e20-4084-9a6f-cef59461afda#u-9b1bf810-1e20-4084-9a6f-cef59461afda .group.mixed > .text.paragraph { color: rgb(237, 247, 244); }
 #u-9b1bf810-1e20-4084-9a6f-cef59461afda#u-9b1bf810-1e20-4084-9a6f-cef59461afda .group.mixed > .text.paragraph a { color: rgb(92, 112, 125); }
 #u-9b1bf810-1e20-4084-9a6f-cef59461afda#u-9b1bf810-1e20-4084-9a6f-cef59461afda .group.mixed > .text.paragraph a:hover { color: rgb(106, 113, 113); }
@@ -933,7 +974,7 @@ wbr.w1800{ display: block }
  #u-452f976b-dea8-4792-9415-2f80cc77a17e-desktop-l-one-3 {
 display: none;
 }
-}</style></head><body><div class="layout-system rust mobile" id="page-452f976b-dea8-4792-9415-2f80cc77a17e"><section kind="layout" style="position: relative" sequence="one" role="header" diff_index="0" index="one" class="layout one i first_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_medium_headline w_medium_title layout one" id="u-452f976b-dea8-4792-9415-2f80cc77a17e-mobile-l-one"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout header layout one" id="u-452f976b-dea8-4792-9415-2f80cc77a17e-mobile-l-one-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="article" diff_index="0" index="one" class="layout one i w_headline w_title w_paragraph w_text w_separator w_decoration w_leader w_short_headline w_short_title w_long_paragraph w_long_text w_cover w_media w_trailer media_gte_narrow media_gte_half media_gte_wide media_gte_full media_landscape crop_true layout one" id="u-452f976b-dea8-4792-9415-2f80cc77a17e-mobile-l-one-2"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_texts colors-use-same-as-previous layout one i first_layout last_layout article layout one" id="u-452f976b-dea8-4792-9415-2f80cc77a17e-mobile-l-one-2-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="footer" diff_index="0" index="one" class="layout one i last_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_medium_headline w_medium_title layout one" id="u-452f976b-dea8-4792-9415-2f80cc77a17e-mobile-l-one-3"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout footer layout one" id="u-452f976b-dea8-4792-9415-2f80cc77a17e-mobile-l-one-3-l-one"></div><style id="u-452f976b-dea8-4792-9415-2f80cc77a17e-color">body{background-color: rgba(32, 21, 24, 1)}</style></section><article subject="panel" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_center uninverted vertical collapsed full line_padding_aside_inside text_width_full group_h_align_none text_align_center flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_small panel stack heading i first_panel last_panel w_headline w_title w_decoration w_medium_headline w_medium_title stack heading" itemid="u-page-nav" itemtype="nav" diff_index="2" index="heading" kind="stack" score="1.875" missed="0.125" tag="article" id="u-452f976b-dea8-4792-9415-2f80cc77a17e-nav"><div kind="group" index="heading" class="group heading group heading" id="u-452f976b-dea8-4792-9415-2f80cc77a17e-nav-g-heading"><h1 kind="title" index="headline" class="medium medium_headline medium_title title headline vfld-leader vfld-trailer title headline" specificity="0.25" itemprop="title" id="u-452f976b-dea8-4792-9415-2f80cc77a17e-nav-g-heading-t-headline"><a class="text-decoration" href="../index.html" id="u-452f976b-dea8-4792-9415-2f80cc77a17e-nav-g-heading-t-headline-a">Een blog door papa's voor <wbr class="w480"></wbr>iedereen die <wbr class="w481"></wbr>het lezen wil</a></h1></div></article><article subject="chapter" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_stretch uninverted vertical collapsed full line_padding_aside_inside text_width_wider group_h_align_center text_align_left flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_large chapter stack textual i first_chapter w_headline w_title w_paragraph w_text w_separator w_decoration w_short_headline w_short_title w_long_paragraph w_long_text stack textual" itemid="99a2b734-63a2-4b09-93b5-0b64c6ad58c4" itemtype="text" diff_index="4" index="textual" kind="stack" score="5.625" missed="0.375" tag="article" id="u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4"><div kind="group" index="textual" class="group textual group textual" id="u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4-g-textual"><h1 kind="title" index="headline" class="short short_headline short_title title headline vfld-leader title headline" specificity="0.25" itemprop="title" id="u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4-g-textual-t-headline"><span class="text-decoration" id="u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4-g-textual-t-headline-span">Eten is delen…<wbr class="w480"></wbr>en <wbr class="w960"></wbr>ook <wbr class="w481"></wbr>een <wbr class="w480 w961 w1799"></wbr>beetje <wbr class="w960 w1800"></wbr>feest.</span></h1><div kind="text" index="paragraph" class="text-decoration long long_paragraph long_text text paragraph vfld-trailer text paragraph" specificity="0.25" itemprop="text" id="u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4-g-textual-t-paragraph"><p><span class="first-letter">I</span><wbr class="w480 w481 w960 w961 w1799"></wbr>k eet graag, kook veel en blijkbaar valt de appel niet <wbr class="w480"></wbr>ver <wbr class="w960"></wbr>van de spreekwoordelijke <wbr class="w481 w961 w1799"></wbr>boom. &#x201C;Die van ons&#x201D; kan <wbr class="w480"></wbr>eten, <wbr class="w960 w1800"></wbr>veel eten, goed eten, smakelijk. Als de oogjes iets <wbr class="w480 w481"></wbr>meer <wbr class="w960 w961 w1799"></wbr>open gaan, het mondje lichte smakgeluidjes maakt <wbr class="w480"></wbr>en ze <wbr class="w960 w1800"></wbr>naar voor begint te <wbr class="w481"></wbr>leunen, <wbr class="w961 w1799"></wbr>dan weet ik: tijd om te <wbr class="w480"></wbr>delen.</p><p><span class="first-letter"><wbr class="w480 w481 w960 w961 w1799 w1800"></wbr>O</span>f het nu een yoghurtje, een stuutje met choco of een <wbr class="w480 w960"></wbr>mandarijntje is, tijdens het <wbr class="w481 w961 w1799"></wbr>ontbijt wordt er gedeeld. <wbr class="w480"></wbr>Alleen <wbr class="w960"></wbr>de <wbr class="w1800"></wbr>koffie, die mag ik nog houden.</p><p><span class="first-letter"><wbr class="w480 w481 w960 w961 w1799 w1800"></wbr>E</span>en belegd broodje, een boterham met hesp, een bord <wbr class="w480 w960"></wbr>pasta, curry met rijst, steak <wbr class="w481"></wbr>friet, <wbr class="w961 w1799"></wbr>chocomousse, kiwi, <wbr class="w480"></wbr>dame <wbr class="w960 w1800"></wbr>blanche&#x2026;delen zult gij, vader!</p><p><span class="first-letter"><wbr class="w480 w481 w960 w961 w1799 w1800"></wbr>E</span>n ja, ik geef toe: ik deel &#x2013; eigenlijk enkel &#x2013; mijn eten niet <wbr class="w480 w960"></wbr>zo graag.</p></div><div kind="decoration" index="separator" class="decoration separator decoration separator" id="u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4-g-textual-d-separator"></div></div></article><article subject="chapter" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_stretch uninverted vertical collapsed full aspect_natural line_padding_aside_inside text_width_wider group_h_align_center text_align_left flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_article chapter stack mixed i last_chapter w_cover w_media w_paragraph w_text w_decoration media_gte_narrow media_gte_half media_gte_wide media_gte_full media_landscape crop_true w_long_paragraph w_long_text stack mixed" itemid="9b1bf810-1e20-4084-9a6f-cef59461afda" itemtype="image" diff_index="0" index="mixed" kind="stack" score="5.625" missed="0.375" tag="article" id="u-9b1bf810-1e20-4084-9a6f-cef59461afda"><div kind="group" index="mixed" class="group mixed group mixed" id="u-9b1bf810-1e20-4084-9a6f-cef59461afda-g-mixed"><a kind="media" index="cover" class="vfld media cover vfld-trailer media cover" specificity="0.25" itemprop="cover" max-width="1925" max-height="1050" href="https://s3-us-west-2.amazonaws.com/the-grid-img/p/b212a8c5d6182452993f0ba15fca88252b2fbcde.jpg" id="u-9b1bf810-1e20-4084-9a6f-cef59461afda-g-mixed-m-cover"><picture id="u-9b1bf810-1e20-4084-9a6f-cef59461afda-g-mixed-m-cover-img" class=""><!--[if IE 9]><video style="display: none;"><![endif]--><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/9bf69fb5e38a885dd63e540c22e40635/passthrough.jpg?height=442&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fb212a8c5d6182452993f0ba15fca88252b2fbcde.jpg&width=810, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/5be3dd0b979e25af7ba2efbe5e48ec5a/passthrough.jpg?height=884&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fb212a8c5d6182452993f0ba15fca88252b2fbcde.jpg&width=1620 2x" media="(min-width: 1441px) and (min-width: 1441px) and (max-width: 1799px) " /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/934fb198db23a2f14c523861590cb798/passthrough.jpg?height=443&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fb212a8c5d6182452993f0ba15fca88252b2fbcde.jpg&width=811, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/2f8d8364f6d4309de2bb7e4f69122b23/passthrough.jpg?height=886&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fb212a8c5d6182452993f0ba15fca88252b2fbcde.jpg&width=1622 2x" media="(min-width: 1441px) and (min-width: 1800px) " /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/28c85ec8230502b1b46cad2f9ebb5587/passthrough.jpg?height=236&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fb212a8c5d6182452993f0ba15fca88252b2fbcde.jpg&width=433, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/5f5553cc3e1536d0f85cc71a0a506b31/passthrough.jpg?height=472&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fb212a8c5d6182452993f0ba15fca88252b2fbcde.jpg&width=866 2x" media="(min-width: 721px) and (min-width: 721px) and (max-width: 960px) " /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/c8fa91d6ca5423124460f96219999062/passthrough.jpg?height=354&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fb212a8c5d6182452993f0ba15fca88252b2fbcde.jpg&width=649, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/e32efbf0feae02a72fd84a200349e1cc/passthrough.jpg?height=708&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fb212a8c5d6182452993f0ba15fca88252b2fbcde.jpg&width=1298 2x" media="(min-width: 721px) and (min-width: 961px) and (max-width: 1440px)" /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/bb7b9bbe8b41f878f41c99a4246635a1/passthrough.jpg?height=230&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fb212a8c5d6182452993f0ba15fca88252b2fbcde.jpg&width=421, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/609525626e4d9ceb3fa6e6bd36a7ddde/passthrough.jpg?height=460&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fb212a8c5d6182452993f0ba15fca88252b2fbcde.jpg&width=842 2x" media="(min-width: 1px) and (max-width: 480px) " /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/24c5c4f0eb658445c427621888bd8257/passthrough.jpg?height=344&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fb212a8c5d6182452993f0ba15fca88252b2fbcde.jpg&width=631, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/ccc51de7a7c91caaa5f6107c0666cb77/passthrough.jpg?height=688&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fb212a8c5d6182452993f0ba15fca88252b2fbcde.jpg&width=1262 2x" media="(min-width: 1px) and (min-width: 481px) and (max-width: 720px)" /><!--[if IE 9]></video><![endif]--><img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="  /></picture></a><div kind="text" index="paragraph" class="text-decoration long long_paragraph long_text text paragraph vfld-leader text paragraph" specificity="0.25" itemprop="text" id="u-9b1bf810-1e20-4084-9a6f-cef59461afda-g-mixed-t-paragraph"><p><span class="first-letter">M</span>aar aan de andere kant vind ik het leuk en ben ik toch <wbr class="w480 w960"></wbr>wel stiekem een beetje trots <wbr class="w481"></wbr>op <wbr class="w961 w1799"></wbr>die kleine spruit van ons. <wbr class="w480 w960 w1800"></wbr>Het is ergens best grappig. Zittend op restaurant, <wbr class="w481"></wbr>stukjes <wbr class="w480 w960 w961 w1799"></wbr>witte pens moeten afgeven of de helft van je cr&#xE8;me <wbr class="w480"></wbr>br&#xFB;l&#xE9;e <wbr class="w960 w1800"></wbr>moeten delen, <wbr class="w481"></wbr>terwijl <wbr class="w1799"></wbr>mejuffer <wbr class="w961"></wbr>Declercq halsstarrig <wbr class="w480"></wbr>om <wbr class="w960"></wbr>meer en meer vraagt en de familie zich een <wbr class="w481"></wbr>breuk <wbr class="w480 w1799"></wbr>lacht. Of <wbr class="w960"></wbr>in <wbr class="w1800"></wbr>de <wbr class="w961"></wbr>winkel een blokje kaas geven en na tien <wbr class="w480"></wbr>minuten <wbr class="w960"></wbr>merken, dat <wbr class="w481"></wbr>haar <wbr class="w1799"></wbr>gezichtje precies wat <wbr class="w961"></wbr>naar <wbr class="w480"></wbr>zweetvoeten <wbr class="w960"></wbr>ruikt.</p><p><span class="first-letter"><wbr class="w480 w481 w960 w961 w1799 w1800"></wbr>A</span>h ja, wie weet, krijgt ze binnenkort streken en wil ze <wbr class="w480"></wbr>enkel <wbr class="w960"></wbr>nog chocolade. <b></b></p><p><span class="first-letter"><wbr class="w480 w481 w960 w961 w1799 w1800"></wbr>T</span>ot dan blijft eten een feest&#x2026;</p><p><span class="first-letter"><wbr class="w480 w481 w960 w961 w1799 w1800"></wbr>e</span>n ook een beetje delen.</p></div></div></article><article subject="panel" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_center uninverted vertical collapsed full line_padding_aside_inside text_width_full group_h_align_none text_align_center flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_small panel stack heading i first_panel last_panel w_headline w_title w_decoration w_medium_headline w_medium_title stack heading" itemid="u-page-alternate" itemtype="alternate" diff_index="2" index="heading" kind="stack" score="1.875" missed="0.125" tag="article" id="u-452f976b-dea8-4792-9415-2f80cc77a17e-alternate"><div kind="group" index="heading" class="group heading group heading" id="u-452f976b-dea8-4792-9415-2f80cc77a17e-alternate-g-heading"><h1 kind="title" index="headline" class="medium medium_headline medium_title title headline vfld-leader vfld-trailer title headline" specificity="0.25" itemprop="title" id="u-452f976b-dea8-4792-9415-2f80cc77a17e-alternate-g-heading-t-headline"><a class="text-decoration" href="../rss.xml" id="u-452f976b-dea8-4792-9415-2f80cc77a17e-alternate-g-heading-t-headline-a">Een blog door papa's voor <wbr class="w480"></wbr>iedereen die <wbr class="w481"></wbr>het lezen wil<wbr class="w480"></wbr> <wbr class="w960"></wbr>feed</a></h1></div></article><section kind="layout" style="position: relative" sequence="one" role="header" diff_index="0" index="one" class="layout one i first_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_medium_headline w_medium_title layout one" id="u-452f976b-dea8-4792-9415-2f80cc77a17e-desktop-l-one"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout header layout one" id="u-452f976b-dea8-4792-9415-2f80cc77a17e-desktop-l-one-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="article" diff_index="0" index="one" class="layout one i w_headline w_title w_paragraph w_text w_separator w_decoration w_leader w_short_headline w_short_title w_long_paragraph w_long_text w_cover w_media w_trailer media_gte_narrow media_gte_half media_gte_wide media_gte_full media_landscape crop_true layout one" id="u-452f976b-dea8-4792-9415-2f80cc77a17e-desktop-l-one-2"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_texts colors-use-same-as-previous layout one i first_layout last_layout article layout one" id="u-452f976b-dea8-4792-9415-2f80cc77a17e-desktop-l-one-2-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="footer" diff_index="0" index="one" class="layout one i last_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_medium_headline w_medium_title layout one" id="u-452f976b-dea8-4792-9415-2f80cc77a17e-desktop-l-one-3"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout footer layout one" id="u-452f976b-dea8-4792-9415-2f80cc77a17e-desktop-l-one-3-l-one"></div><style id="u-452f976b-dea8-4792-9415-2f80cc77a17e-color">body{background-color: rgba(32, 21, 24, 1)}</style></section><section kind="layout" style="position: relative" sequence="one" role="header" diff_index="0" index="one" class="layout one i first_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_medium_headline w_medium_title layout one" id="u-452f976b-dea8-4792-9415-2f80cc77a17e-cinema-l-one"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout header layout one" id="u-452f976b-dea8-4792-9415-2f80cc77a17e-cinema-l-one-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="article" diff_index="0" index="one" class="layout one i w_headline w_title w_paragraph w_text w_separator w_decoration w_leader w_short_headline w_short_title w_long_paragraph w_long_text w_cover w_media w_trailer media_gte_narrow media_gte_half media_gte_wide media_gte_full media_landscape crop_true layout one" id="u-452f976b-dea8-4792-9415-2f80cc77a17e-cinema-l-one-2"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_texts colors-use-same-as-previous layout one i first_layout last_layout article layout one" id="u-452f976b-dea8-4792-9415-2f80cc77a17e-cinema-l-one-2-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="footer" diff_index="0" index="one" class="layout one i last_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_medium_headline w_medium_title layout one" id="u-452f976b-dea8-4792-9415-2f80cc77a17e-cinema-l-one-3"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout footer layout one" id="u-452f976b-dea8-4792-9415-2f80cc77a17e-cinema-l-one-3-l-one"></div><style id="u-452f976b-dea8-4792-9415-2f80cc77a17e-color">body{background-color: rgba(32, 21, 24, 1)}</style></section></div><script href="./client.js">(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+}</style></head><body><div class="layout-system rust mobile" id="page-452f976b-dea8-4792-9415-2f80cc77a17e"><section kind="layout" style="position: relative" sequence="one" role="header" diff_index="0" index="one" class="layout one i first_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_medium_headline w_medium_title layout one" id="u-452f976b-dea8-4792-9415-2f80cc77a17e-mobile-l-one"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout header layout one" id="u-452f976b-dea8-4792-9415-2f80cc77a17e-mobile-l-one-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="article" diff_index="0" index="one" class="layout one i w_headline w_title w_paragraph w_text w_separator w_decoration w_leader w_short_headline w_short_title w_long_paragraph w_long_text w_cover w_media w_trailer media_gte_narrow media_gte_half media_gte_wide media_gte_full media_landscape crop_true layout one" id="u-452f976b-dea8-4792-9415-2f80cc77a17e-mobile-l-one-2"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_texts colors-use-same-as-previous layout one i first_layout last_layout article layout one" id="u-452f976b-dea8-4792-9415-2f80cc77a17e-mobile-l-one-2-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="footer" diff_index="0" index="one" class="layout one i last_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_medium_headline w_medium_title layout one" id="u-452f976b-dea8-4792-9415-2f80cc77a17e-mobile-l-one-3"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout footer layout one" id="u-452f976b-dea8-4792-9415-2f80cc77a17e-mobile-l-one-3-l-one"></div><style id="u-452f976b-dea8-4792-9415-2f80cc77a17e-color">body{background-color: rgba(32, 21, 24, 1)}</style></section><article subject="panel" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_center uninverted vertical collapsed full line_padding_aside_inside text_width_full group_h_align_none text_align_center flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_small panel stack heading i first_panel last_panel w_headline w_title w_decoration w_medium_headline w_medium_title stack heading" itemid="u-page-nav" itemtype="nav" diff_index="2" index="heading" kind="stack" score="1.875" missed="0.125" tag="article" id="u-452f976b-dea8-4792-9415-2f80cc77a17e-nav"><div kind="group" index="heading" class="group heading group heading" id="u-452f976b-dea8-4792-9415-2f80cc77a17e-nav-g-heading"><h1 kind="title" index="headline" class="medium medium_headline medium_title title headline vfld-leader vfld-trailer title headline" specificity="0.25" itemprop="title" id="u-452f976b-dea8-4792-9415-2f80cc77a17e-nav-g-heading-t-headline"><a class="text-decoration" href="../index.html" id="u-452f976b-dea8-4792-9415-2f80cc77a17e-nav-g-heading-t-headline-a">Een blog door papa's voor <wbr class="w480"></wbr>iedereen die <wbr class="w481"></wbr>het lezen wil</a></h1></div></article><article subject="chapter" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_stretch uninverted vertical collapsed full line_padding_aside_inside text_width_wider group_h_align_center text_align_left flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_large chapter stack textual i first_chapter w_headline w_title w_paragraph w_text w_separator w_decoration w_short_headline w_short_title w_long_paragraph w_long_text stack textual" itemid="99a2b734-63a2-4b09-93b5-0b64c6ad58c4" itemtype="text" diff_index="4" index="textual" kind="stack" score="1.625" missed="0.375" tag="article" id="u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4"><div kind="group" index="textual" class="group textual group textual" id="u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4-g-textual"><h1 kind="title" index="headline" class="short short_headline short_title title headline vfld-leader title headline" specificity="0.25" itemprop="title" id="u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4-g-textual-t-headline"><span class="text-decoration" id="u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4-g-textual-t-headline-span">Eten is delen…<wbr class="w480"></wbr>en <wbr class="w960"></wbr>ook <wbr class="w481"></wbr>een <wbr class="w480 w961 w1799"></wbr>beetje <wbr class="w960 w1800"></wbr>feest.</span></h1><div kind="text" index="paragraph" class="text-decoration long long_paragraph long_text text paragraph vfld-trailer text paragraph" specificity="0.25" itemprop="text" id="u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4-g-textual-t-paragraph"><p><span class="first-letter">I</span><wbr class="w480 w481 w960 w961 w1799"></wbr>k eet graag, kook veel en blijkbaar valt de appel niet <wbr class="w480"></wbr>ver <wbr class="w960"></wbr>van de spreekwoordelijke <wbr class="w481 w961 w1799"></wbr>boom. &#x201C;Die van ons&#x201D; kan <wbr class="w480"></wbr>eten, <wbr class="w960 w1800"></wbr>veel eten, goed eten, smakelijk. Als de oogjes iets <wbr class="w480 w481"></wbr>meer <wbr class="w960 w961 w1799"></wbr>open gaan, het mondje lichte smakgeluidjes maakt <wbr class="w480"></wbr>en ze <wbr class="w960 w1800"></wbr>naar voor begint te <wbr class="w481"></wbr>leunen, <wbr class="w961 w1799"></wbr>dan weet ik: tijd om te <wbr class="w480"></wbr>delen.</p><p><span class="first-letter"><wbr class="w480 w481 w960 w961 w1799 w1800"></wbr>O</span>f het nu een yoghurtje, een stuutje met choco of een <wbr class="w480 w960"></wbr>mandarijntje is, tijdens het <wbr class="w481 w961 w1799"></wbr>ontbijt wordt er gedeeld. <wbr class="w480"></wbr>Alleen <wbr class="w960"></wbr>de <wbr class="w1800"></wbr>koffie, die mag ik nog houden.</p><p><span class="first-letter"><wbr class="w480 w481 w960 w961 w1799 w1800"></wbr>E</span>en belegd broodje, een boterham met hesp, een bord <wbr class="w480 w960"></wbr>pasta, curry met rijst, steak <wbr class="w481"></wbr>friet, <wbr class="w961 w1799"></wbr>chocomousse, kiwi, <wbr class="w480"></wbr>dame <wbr class="w960 w1800"></wbr>blanche&#x2026;delen zult gij, vader!</p><p><span class="first-letter"><wbr class="w480 w481 w960 w961 w1799 w1800"></wbr>E</span>n ja, ik geef toe: ik deel &#x2013; eigenlijk enkel &#x2013; mijn eten niet <wbr class="w480 w960"></wbr>zo graag.</p></div><div kind="decoration" index="separator" class="decoration separator decoration separator" id="u-99a2b734-63a2-4b09-93b5-0b64c6ad58c4-g-textual-d-separator"></div></div></article><article subject="chapter" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_stretch uninverted vertical collapsed full aspect_natural line_padding_aside_inside text_width_wider group_h_align_center text_align_left flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_article chapter stack mixed i last_chapter w_cover w_media w_paragraph w_text w_decoration media_gte_narrow media_gte_half media_gte_wide media_gte_full media_landscape crop_true w_long_paragraph w_long_text stack mixed" itemid="9b1bf810-1e20-4084-9a6f-cef59461afda" itemtype="image" diff_index="0" index="mixed" kind="stack" score="3.625" missed="0.375" tag="article" id="u-9b1bf810-1e20-4084-9a6f-cef59461afda"><div kind="group" index="mixed" class="group mixed group mixed" id="u-9b1bf810-1e20-4084-9a6f-cef59461afda-g-mixed"><a kind="media" index="cover" class="vfld media cover vfld-trailer media cover" specificity="0.25" itemprop="cover" max-width="1925" max-height="1050" href="https://s3-us-west-2.amazonaws.com/the-grid-img/p/b212a8c5d6182452993f0ba15fca88252b2fbcde.jpg" id="u-9b1bf810-1e20-4084-9a6f-cef59461afda-g-mixed-m-cover"><picture id="u-9b1bf810-1e20-4084-9a6f-cef59461afda-g-mixed-m-cover-img" class=""><!--[if IE 9]><video style="display: none;"><![endif]--><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/9bf69fb5e38a885dd63e540c22e40635/passthrough.jpg?height=442&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fb212a8c5d6182452993f0ba15fca88252b2fbcde.jpg&width=810, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/5be3dd0b979e25af7ba2efbe5e48ec5a/passthrough.jpg?height=884&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fb212a8c5d6182452993f0ba15fca88252b2fbcde.jpg&width=1620 2x" media="(min-width: 1441px) and (min-width: 1441px) and (max-width: 1799px) " /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/934fb198db23a2f14c523861590cb798/passthrough.jpg?height=443&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fb212a8c5d6182452993f0ba15fca88252b2fbcde.jpg&width=811, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/2f8d8364f6d4309de2bb7e4f69122b23/passthrough.jpg?height=886&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fb212a8c5d6182452993f0ba15fca88252b2fbcde.jpg&width=1622 2x" media="(min-width: 1441px) and (min-width: 1800px) " /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/28c85ec8230502b1b46cad2f9ebb5587/passthrough.jpg?height=236&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fb212a8c5d6182452993f0ba15fca88252b2fbcde.jpg&width=433, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/5f5553cc3e1536d0f85cc71a0a506b31/passthrough.jpg?height=472&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fb212a8c5d6182452993f0ba15fca88252b2fbcde.jpg&width=866 2x" media="(min-width: 721px) and (min-width: 721px) and (max-width: 960px) " /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/c8fa91d6ca5423124460f96219999062/passthrough.jpg?height=354&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fb212a8c5d6182452993f0ba15fca88252b2fbcde.jpg&width=649, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/e32efbf0feae02a72fd84a200349e1cc/passthrough.jpg?height=708&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fb212a8c5d6182452993f0ba15fca88252b2fbcde.jpg&width=1298 2x" media="(min-width: 721px) and (min-width: 961px) and (max-width: 1440px)" /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/bb7b9bbe8b41f878f41c99a4246635a1/passthrough.jpg?height=230&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fb212a8c5d6182452993f0ba15fca88252b2fbcde.jpg&width=421, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/609525626e4d9ceb3fa6e6bd36a7ddde/passthrough.jpg?height=460&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fb212a8c5d6182452993f0ba15fca88252b2fbcde.jpg&width=842 2x" media="(min-width: 1px) and (max-width: 480px) " /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/24c5c4f0eb658445c427621888bd8257/passthrough.jpg?height=344&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fb212a8c5d6182452993f0ba15fca88252b2fbcde.jpg&width=631, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/ccc51de7a7c91caaa5f6107c0666cb77/passthrough.jpg?height=688&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fb212a8c5d6182452993f0ba15fca88252b2fbcde.jpg&width=1262 2x" media="(min-width: 1px) and (min-width: 481px) and (max-width: 720px)" /><!--[if IE 9]></video><![endif]--><img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="  /></picture></a><div kind="text" index="paragraph" class="text-decoration long long_paragraph long_text text paragraph vfld-leader text paragraph" specificity="0.25" itemprop="text" id="u-9b1bf810-1e20-4084-9a6f-cef59461afda-g-mixed-t-paragraph"><p><span class="first-letter">M</span>aar aan de andere kant vind ik het leuk en ben ik toch <wbr class="w480 w960"></wbr>wel stiekem een beetje trots <wbr class="w481"></wbr>op <wbr class="w961 w1799"></wbr>die kleine spruit van ons. <wbr class="w480 w960 w1800"></wbr>Het is ergens best grappig. Zittend op restaurant, <wbr class="w481"></wbr>stukjes <wbr class="w480 w960 w961 w1799"></wbr>witte pens moeten afgeven of de helft van je cr&#xE8;me <wbr class="w480"></wbr>br&#xFB;l&#xE9;e <wbr class="w960 w1800"></wbr>moeten delen, <wbr class="w481"></wbr>terwijl <wbr class="w1799"></wbr>mejuffer <wbr class="w961"></wbr>Declercq halsstarrig <wbr class="w480"></wbr>om <wbr class="w960"></wbr>meer en meer vraagt en de familie zich een <wbr class="w481"></wbr>breuk <wbr class="w480 w1799"></wbr>lacht. Of <wbr class="w960"></wbr>in <wbr class="w1800"></wbr>de <wbr class="w961"></wbr>winkel een blokje kaas geven en na tien <wbr class="w480"></wbr>minuten <wbr class="w960"></wbr>merken, dat <wbr class="w481"></wbr>haar <wbr class="w1799"></wbr>gezichtje precies wat <wbr class="w961"></wbr>naar <wbr class="w480"></wbr>zweetvoeten <wbr class="w960"></wbr>ruikt.</p><p><span class="first-letter"><wbr class="w480 w481 w960 w961 w1799 w1800"></wbr>A</span>h ja, wie weet, krijgt ze binnenkort streken en wil ze <wbr class="w480"></wbr>enkel <wbr class="w960"></wbr>nog chocolade. <b></b></p><p><span class="first-letter"><wbr class="w480 w481 w960 w961 w1799 w1800"></wbr>T</span>ot dan blijft eten een feest&#x2026;</p><p><span class="first-letter"><wbr class="w480 w481 w960 w961 w1799 w1800"></wbr>e</span>n ook een beetje delen.</p></div></div></article><article subject="panel" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_center uninverted vertical collapsed full line_padding_aside_inside text_width_full group_h_align_none text_align_center flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_small panel stack heading i first_panel last_panel w_headline w_title w_decoration w_medium_headline w_medium_title stack heading" itemid="u-page-alternate" itemtype="alternate" diff_index="2" index="heading" kind="stack" score="1.875" missed="0.125" tag="article" id="u-452f976b-dea8-4792-9415-2f80cc77a17e-alternate"><div kind="group" index="heading" class="group heading group heading" id="u-452f976b-dea8-4792-9415-2f80cc77a17e-alternate-g-heading"><h1 kind="title" index="headline" class="medium medium_headline medium_title title headline vfld-leader vfld-trailer title headline" specificity="0.25" itemprop="title" id="u-452f976b-dea8-4792-9415-2f80cc77a17e-alternate-g-heading-t-headline"><a class="text-decoration" href="../rss.xml" id="u-452f976b-dea8-4792-9415-2f80cc77a17e-alternate-g-heading-t-headline-a">Een blog door papa's voor <wbr class="w480"></wbr>iedereen die <wbr class="w481"></wbr>het lezen wil<wbr class="w480"></wbr> <wbr class="w960"></wbr>feed</a></h1></div></article><section kind="layout" style="position: relative" sequence="one" role="header" diff_index="0" index="one" class="layout one i first_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_medium_headline w_medium_title layout one" id="u-452f976b-dea8-4792-9415-2f80cc77a17e-desktop-l-one"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout header layout one" id="u-452f976b-dea8-4792-9415-2f80cc77a17e-desktop-l-one-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="article" diff_index="0" index="one" class="layout one i w_headline w_title w_paragraph w_text w_separator w_decoration w_leader w_short_headline w_short_title w_long_paragraph w_long_text w_cover w_media w_trailer media_gte_narrow media_gte_half media_gte_wide media_gte_full media_landscape crop_true layout one" id="u-452f976b-dea8-4792-9415-2f80cc77a17e-desktop-l-one-2"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_texts colors-use-same-as-previous layout one i first_layout last_layout article layout one" id="u-452f976b-dea8-4792-9415-2f80cc77a17e-desktop-l-one-2-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="footer" diff_index="0" index="one" class="layout one i last_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_medium_headline w_medium_title layout one" id="u-452f976b-dea8-4792-9415-2f80cc77a17e-desktop-l-one-3"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout footer layout one" id="u-452f976b-dea8-4792-9415-2f80cc77a17e-desktop-l-one-3-l-one"></div><style id="u-452f976b-dea8-4792-9415-2f80cc77a17e-color">body{background-color: rgba(32, 21, 24, 1)}</style></section><section kind="layout" style="position: relative" sequence="one" role="header" diff_index="0" index="one" class="layout one i first_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_medium_headline w_medium_title layout one" id="u-452f976b-dea8-4792-9415-2f80cc77a17e-cinema-l-one"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout header layout one" id="u-452f976b-dea8-4792-9415-2f80cc77a17e-cinema-l-one-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="article" diff_index="0" index="one" class="layout one i w_headline w_title w_paragraph w_text w_separator w_decoration w_leader w_short_headline w_short_title w_long_paragraph w_long_text w_cover w_media w_trailer media_gte_narrow media_gte_half media_gte_wide media_gte_full media_landscape crop_true layout one" id="u-452f976b-dea8-4792-9415-2f80cc77a17e-cinema-l-one-2"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_texts colors-use-same-as-previous layout one i first_layout last_layout article layout one" id="u-452f976b-dea8-4792-9415-2f80cc77a17e-cinema-l-one-2-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="footer" diff_index="0" index="one" class="layout one i last_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_medium_headline w_medium_title layout one" id="u-452f976b-dea8-4792-9415-2f80cc77a17e-cinema-l-one-3"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout footer layout one" id="u-452f976b-dea8-4792-9415-2f80cc77a17e-cinema-l-one-3-l-one"></div><style id="u-452f976b-dea8-4792-9415-2f80cc77a17e-color">body{background-color: rgba(32, 21, 24, 1)}</style></section></div><script href="./client.js">(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 /*! Hammer.JS - v1.1.3 - 2014-05-20
  * http://eightmedia.github.io/hammer.js
  *
@@ -1460,9 +1501,11 @@ global.Hamburger = require('./hamburger');
 
 global.Highlighter = require('./highlighter');
 
+global.Player = require('./player');
+
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./animator":3,"./hamburger":4,"./highlighter":5,"./paginator":7,"hammerjs/hammer.min.js":1,"picturefill/dist/picturefill.min.js":2}],7:[function(require,module,exports){
+},{"./animator":3,"./hamburger":4,"./highlighter":5,"./paginator":7,"./player":8,"hammerjs/hammer.min.js":1,"picturefill/dist/picturefill.min.js":2}],7:[function(require,module,exports){
 var appendPage, mainpage, page, ref, ref1, urls;
 
 page = require('./reflow');
@@ -1563,7 +1606,192 @@ module.exports = function() {
 };
 
 
-},{"./reflow":8}],8:[function(require,module,exports){
+},{"./reflow":9}],8:[function(require,module,exports){
+var Player, Youtube, iframe, revealed, rgb2hex;
+
+iframe = null;
+
+Youtube = null;
+
+Player = function(id, src, width, height, color, bg) {
+  if (src.indexOf('youtube') > -1) {
+    src += '&color=white&theme=light&modestbranding=1';
+  }
+  src = src.replace('COLOR', color).replace('BG', bg);
+  if (location.protocol !== 'https:') {
+    src = src.replace('https:', 'http:');
+  }
+  iframe = document.createElement('iframe');
+  iframe.id = id;
+  iframe.setAttribute('allowfullscreen', '');
+  iframe.src = src;
+  iframe.width = width;
+  iframe.height = height;
+  iframe.style.width = '100%';
+  iframe.style.height = '100%';
+  iframe.style.left = 0;
+  iframe.style.right = 0;
+  iframe.style.position = 'absolute';
+  iframe.style.opacity = 0.2;
+  iframe.onload = function() {
+    return iframe.style.opacity = 1;
+  };
+  return iframe;
+};
+
+revealed = null;
+
+Player.reveal = function(iframe) {
+  var diff, i, left, len, parent, play, ref, ref1, sibling, target, top, translateX, translateY;
+  while (target = (target || iframe).parentNode) {
+    if ((ref = target.classList) != null ? ref.contains('media') : void 0) {
+      if (target.parentNode.classList.contains('group')) {
+        parent = target.parentNode;
+      } else {
+        parent = target;
+      }
+      revealed = iframe;
+      play = parent.getElementsByClassName('play')[0];
+      left = target.offsetWidth - play.offsetLeft - play.offsetWidth;
+      top = -play.offsetTop;
+      play.style.webkitTransformOrigin = 'top right';
+      play.style.webkitTransform = 'translateX(' + left + 'px) translateY(' + top + 'px) scale(0.5)';
+      target.classList.add('revealed');
+      ref1 = parent.parentNode.childNodes;
+      for (i = 0, len = ref1.length; i < len; i++) {
+        sibling = ref1[i];
+        if (sibling.nodeType === 1 && sibling !== parent) {
+          translateX = translateY = null;
+          if ((diff = sibling.offsetLeft + sibling.offsetWidth - parent.offsetLeft) > 2 && parent.offsetLeft >= sibling.offsetLeft) {
+            translateX = -diff;
+          }
+          if ((diff = target.offsetLeft + target.offsetWidth - sibling.offsetLeft) > 2 && parent.offsetLeft <= sibling.offsetLeft) {
+            if (!translateX || Math.abs(diff) < Math.abs(translateX)) {
+              translateX = diff;
+            }
+          }
+          if ((diff = sibling.offsetTop + sibling.offsetHeight - parent.offsetTop) > 2 && parent.offsetTop >= sibling.offsetTop) {
+            translateY = -diff;
+          }
+          if ((diff = target.offsetTop + target.offsetHeight - sibling.offsetTop) > 2 && parent.offsetTop <= sibling.offsetTop) {
+            if (!translateY || Math.abs(diff) < Math.abs(translateY)) {
+              translateY = diff;
+            }
+          }
+          if (Math.abs(translateX) > Math.abs(translateY)) {
+            sibling.style.webkitTransform = 'translateY(' + translateY + 'px)';
+          } else {
+            sibling.style.webkitTransform = 'translateX(' + translateX + 'px)';
+          }
+          console.log(translateX, translateY, sibling);
+        }
+      }
+    }
+  }
+};
+
+Player.hide = function(iframe) {
+  var i, len, parent, play, ref, ref1, sibling;
+  while (parent = (parent || iframe).parentNode) {
+    if ((ref = parent.classList) != null ? ref.contains('revealed') : void 0) {
+      parent.classList.remove('revealed');
+      if (parent.parentNode.classList.contains('group')) {
+        parent = parent.parentNode;
+      }
+      play = parent.getElementsByClassName('play')[0];
+      play.style.webkitTransform = '';
+      ref1 = parent.parentNode.childNodes;
+      for (i = 0, len = ref1.length; i < len; i++) {
+        sibling = ref1[i];
+        sibling.style.webkitTransform = '';
+      }
+    }
+  }
+  return revealed = null;
+};
+
+window.addEventListener('resize', function() {
+  return setTimeout(function() {
+    return requestAnimationFrame(function() {
+      if (revealed) {
+        if (revealed.offsetWidth) {
+          return Player.reveal(revealed);
+        } else {
+          return Player.stop(revealed);
+        }
+      }
+    });
+  }, 10);
+});
+
+Player.stop = function(iframe) {
+  var old;
+  old = iframe;
+  iframe.style.opacity = 0;
+  setTimeout(function() {
+    var ref;
+    return (ref = old.parentNode) != null ? ref.removeChild(old) : void 0;
+  }, 300);
+  Player.hide(iframe);
+  return iframe = null;
+};
+
+document.addEventListener('click', function(e) {
+  var bg, color, header, parent, play, ref, ref1, results, styles, target;
+  target = e.target;
+  results = [];
+  while (target) {
+    if ((ref = target.classList) != null ? ref.contains('media') : void 0) {
+      if (play = target.getElementsByClassName('play')[0]) {
+        if ((iframe != null ? iframe.parentNode : void 0) === target) {
+          Player.stop(iframe);
+        } else {
+          if (iframe) {
+            Player.stop(iframe);
+          }
+          color = bg = null;
+          header = (ref1 = target.parentNode.parentNode.getElementsByClassName('title')[0]) != null ? ref1.firstChild : void 0;
+          parent = header || play;
+          while (parent) {
+            if (parent.nodeType === 1) {
+              styles = window.getComputedStyle(parent);
+              if (styles.color.indexOf('rgba') === -1 || !styles.color.match(/,\s*0\)/)) {
+                if (color == null) {
+                  color = styles.color;
+                }
+              }
+              if (styles['background-color'].indexOf('rgba') === -1 || !styles['background-color'].match(/,\s*0\)/)) {
+                if (bg == null) {
+                  bg = styles['background-color'];
+                }
+              }
+            }
+            parent = parent.parentNode;
+          }
+          iframe = Player(play.id + '-player', play.getAttribute('data-src'), play.getAttribute('data-width'), play.getAttribute('data-height'), rgb2hex(color), rgb2hex(bg));
+          target.appendChild(iframe);
+          Player.reveal(iframe);
+        }
+        e.preventDefault();
+        break;
+      }
+    }
+    results.push(target = target.parentNode);
+  }
+  return results;
+});
+
+rgb2hex = function(rgb) {
+  rgb = rgb.match(/^rgba?[\s+]?\([\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?/i);
+  if (rgb && rgb.length === 4) {
+    return ("0" + parseInt(rgb[1], 10).toString(16)).slice(-2) + ("0" + parseInt(rgb[2], 10).toString(16)).slice(-2) + ("0" + parseInt(rgb[3], 10).toString(16)).slice(-2);
+  }
+};
+
+window.exports = window.Player = Player;
+
+
+},{}],9:[function(require,module,exports){
 module.exports = {
   reflow: function(container) {
     var counter, heights, hidden, hole, holed, holes, i, id, ids, index, j, k, l, last, layout, layouts, len, len1, len2, len3, m, mutations, name, node, ref, ref1, ref2, stack, stacks;
@@ -1828,7 +2056,7 @@ module.exports = function(callback) {
   } else {
     protocol = '';
   }
-  url = protocol + "//cdn.thegrid.io/gss/gss-document/1.2.4/gss.document.parser.js";
+  url = protocol + "//cdn.thegrid.io/gss/gss-document/1.2.8/gss.document.parser.js";
   if (location.toString().indexOf('//localhost:8080') > -1) {
     return module.exports.load(protocol + "//localhost:8080/node_modules/gss-document/dist/gss.document.parser.js", callback, function() {
       return module.exports.load(url, callback);
